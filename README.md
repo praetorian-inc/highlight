@@ -8,13 +8,13 @@ With this utility, the entire process can be automated.
 
 ## Code Example
 
-cat types.h | highlight -o output.bmp -i trace
+**cat types.h | highlight -o output.bmp -i trace**
 
-<image>
+![Simple Image](https://github.com/cryptogiff/highlight/blob/master/output.bmp)
 
-ps | highlight -o output_full.bmp -d 120x30 -b white -f c0ffee -x blue -i -r CMD ttys003
+**ps | highlight -o output_full.bmp -d 120x30 -b white -f c0ffee -x blue -i -r CMD ttys003**
 
-<image>
+![Complex Image](https://github.com/cryptogiff/highlight/blob/master/output_full.bmp)
 
 ## Motivation
 
@@ -25,8 +25,7 @@ I'm frequently creating reports which need images that are derived from a text f
 Compile and run.  It's designed to be self contained and not need additional libraries.  It's been tested on Mac and a couple variants of Unix.
 
 ## Help
-
-> highlight -h
+```
 Usage: highlight [options] <string to find>
  -b color   Background color (default black)
  -c int     Keep this many lines before and after found for context
@@ -47,11 +46,12 @@ At least blur (-r) or a search string must be specified.
 Colors may be specified as an RGB tuple, i.e. -f c0ffee
 
 Returns number of matches in the $? shell variable.
+```
 
 ## Design Descisions
 
 Simply put, I didn't want to include libraries since they tend to be large or hard to install.  This allows the program to readily compile on different platforms.  Additionally, the BMP format has a compressed mode which does a reasonably good job.
 
-As to using C for the language, it's one I'm very comfortable using.  I'm pretty happy with the resuling code, even though If I were starting over I might make some design changes.
+As to using C for the language, it's one I'm very comfortable using.
 
-
+The output is tailored to my needs, hence the little details with the font choice, default colors and even the thin black line around the image.
