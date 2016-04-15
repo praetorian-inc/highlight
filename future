@@ -1,0 +1,14 @@
+Possible Future Enhancements:
+
+When having a small number of lines going in, don't need to keep the
+upper blank lines.  Will the user ever want the blank lines?
+
+
+Search string (and blur), allow some regular expressions.  Depends on the
+complexity.  Would rather not have to import a special library for it.
+Dot, star, vertical bar
+
+
+Chop left and right blank columns.
+
+
