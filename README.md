@@ -22,7 +22,9 @@ I'm frequently creating reports which need images that are derived from a text f
 
 ## Installation
 
-Compile and run.  It's designed to be self contained and not need additional libraries.  It's been tested on Mac and a couple variants of Unix.
+**make install**
+
+It will install into /usr/local/bin and it's designed to be self contained without additional libraries.  It's been tested on Mac and a couple variants of Unix.
 
 ## Help
 ```
