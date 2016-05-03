@@ -1,5 +1,8 @@
 all: highlight
 
+install: highlight
+	/bin/cp highlight /usr/local/bin/highlight
+
 clean:
 	rm -f highlight bmp.o color.o font.o screen.o
 

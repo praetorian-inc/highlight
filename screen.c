@@ -104,7 +104,20 @@ void screen_printf(struct screen_t *screen, char *string) {
         if (*string == '\n') {
             screen->x_pos = -1;
         } else if (*string == '') {
-            // Do nothing
+            char *p = NULL;
+
+            // Do nothing with the escape.
+            // If it's an ANSII color, silently consume it:   <ESC>[#m
+            // Where # may be numbers separated by semicolons
+            // This cheap regex will consume <ESC>[0-9\[;]*m
+            p = string + 1;
+            while ((*p == ';') || (*p == '[') || ((*p >= '0') && (*p <= '9'))) {
+                p++;
+            }
+
+            if (*p == 'm') {
+                string = p;         // Point at final 'm', which will be skipped
+            }
         } else {
             screen_char(screen, *string, screen->x_pos++, row);
 
